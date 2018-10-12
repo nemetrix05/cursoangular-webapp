@@ -1,0 +1,41 @@
+<h3>{{title}}</h3>
+<hr>
+
+<div *ngIf="!productos">
+    Cargando Productos...
+</div>
+
+<div *ngIf="productos" class="row">
+
+    <div class="col-md-4" *ngFor="let producto of productos">
+        <div class="card item">
+
+            <div *ngIf="producto.imagen">
+                <img src="{{pathImgApi}}{{producto.imagen}}" class="card-img-top set-img"/>
+            </div>
+
+            <div *ngIf="!producto.imagen" class="without-image set-img">
+            </div>            
+
+            <div class="card-body">
+                <h5>{{producto.marca}}</h5>
+                <div><strong>Precio:</strong> ${{producto.precio}}</div>
+                <div><strong>Descripcion:</strong> {{producto.descripcion}}</div>
+                <ul>
+                    <li>
+                        <a href="#" class="btn btn-sm btn-outline-success">Ver</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-sm btn-outline-warning">Editar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                    </li>                                        
+                </ul>            
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

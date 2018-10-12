@@ -1,0 +1,142 @@
+html{ 
+    height: 100%;
+    box-sizing: border-box;
+}
+img{
+    outline:none; 
+    max-width: 100%; 
+    width: 100%;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#header{
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+10,70a4d1+100 */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top, #1e5799 10%, #70a4d1 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #1e5799 10%,#70a4d1 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #1e5799 10%,#70a4d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#70a4d1',GradientType=0 ); /* IE6-9 */
+    padding: 25px 0;
+
+}
+
+#header img{
+    max-width: 40px;
+}
+
+#header img, #header h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#header h1{
+    color: #fff;
+    margin: 0 0 0 10px;
+    font-size: 30px;
+}
+
+#nav{
+    background: #1a1a1a;
+}
+
+#nav ul{
+    padding: 0;
+    list-style: none;
+}
+
+#nav ul li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#nav ul li a{
+    color: #ccc;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 12px 15px;
+    border-left: 1px solid #484848;
+    display: block;
+    transition:all 0.2s;
+    font-size: 14px;
+    border-bottom: 5px solid #1a1a1a;
+}
+
+#nav ul li a:hover{
+    color: #fff;
+    text-decoration: none;
+    background: #70a4d1;
+    border-bottom:5px solid #70a4d1;
+}
+
+a.active{
+    border-bottom:5px solid #28a745 !important;
+    background:#000;
+}
+
+#section{
+    min-height: 100%;
+    margin-top: 30px;
+}
+
+#footer{
+    background: #ebebeb; 
+    border-top: 2px solid #ccc;
+    padding: 10px 0;
+    width: 100%;
+}
+
+#footer p{
+    margin: 0;
+    color: #ccc;
+    font-size: 13px;
+}
+
+#section .jumbotron > a{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 20px 0 0;
+}
+
+#section h3{
+    color: #000;
+}
+
+.ticon img{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 25px;
+}
+
+.set-img{
+    width: 100%;
+    height: 200px;
+}
+
+.without-image{
+    background: #ccc;
+    position: relative;
+}
+
+.without-image:after{
+    content: 'No disponible';
+    color: #b4b4b4;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+}
+
+.item{
+    margin: 30px 0;
+}
+
+.item ul li{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 10px 0 0;
+}

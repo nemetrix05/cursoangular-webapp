@@ -1,0 +1,57 @@
+<h3>{{title}}</h3>
+<hr>
+<form id="formadd" class="row" (ngSubmit)="onSubmit()" #formadd="ngForm">
+    
+    <div class="form-group col-md-6">
+        <label>Nombre:</label>
+        <input type="text" class="form-control" name="marca" [(ngModel)]="producto.marca" #marca="ngModel" required pattern="[a-zA-Z]*">
+        <div class="alert alert-danger" *ngIf="marca.touched && !marca.valid" role="alert">Escribe la marca</div>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label>Precio:</label>
+        <input type="text" class="form-control" name="precio" [(ngModel)]="producto.precio" required #precio="ngModel" pattern="[0-9]+">
+        <div class="alert alert-danger" role="alert" *ngIf="precio.touched && !precio.valid">
+            Escribe el precio
+        </div>
+    </div>  
+
+    <div class="form-group col-md-6">
+        <label>Catalogo:</label>
+        <input type="text" class="form-control" name="catalogo" [(ngModel)]="producto.catalogo" required #catalogo="ngModel" pattern="[a-zA-Z]*">
+        <div class="alert alert-danger" role="alert" *ngIf="catalogo.touched && !catalogo.valid">
+            Escribe el catalogo
+        </div>        
+    </div>     
+    
+    <div class="form-group col-md-6">
+        <label>Imagen:</label>
+        <input type="file" class="form-control-file" name="imagen" (change)="fileChangeEvent($event)">
+    </div>         
+    
+    <div class="form-group col-md-12">
+        <label>Descripcion:</label>
+        <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" required #descripcion="ngModel" pattern="[a-zA-Z]*"></textarea>
+        <div class="alert alert-danger" role="alert" *ngIf="descripcion.touched && !descripcion.valid">
+                Escribe la descripcion
+        </div>             
+    </div>      
+
+    <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-success btn-md" [disabled]="!formadd.form.valid">{{title}}</button>
+    </div>         
+
+</form>
+
+<!--Validation Message-->
+<div *ngIf="msnSuccess">
+    <div class="alert alert-success" role="alert">
+        {{msnSuccess}}
+    </div>       
+</div>
+
+<div *ngIf="msnError">
+    <div class="alert alert-danger" role="alert">
+        {{msnError}}
+    </div>       
+</div>
