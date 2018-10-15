@@ -47,13 +47,12 @@ export class ProductoAdd{
                     this.producto.imagen = this.resultUpload.filename;
                     // Se guarda con imagen
                     this.saveProducto();
-                    console.log(result);
 
                 }, (error) =>{
                     console.log(error);
                 });
         }else{
-            // Se guarda si imagen
+            // Se guarda sin imagen
             this.saveProducto();
         }
     }
@@ -67,12 +66,11 @@ export class ProductoAdd{
                     //this._router.navigate(['/productos']);
                     this.msnSuccess = 'El producto ha sido guardado :)';
                 }else{
-                    console.log(response);
                     this.msnError = 'Error al guardar el producto';
                 }
             },
             error => {
-                console.log(<any>error);
+                console.log(error);
             }
         );        
     }

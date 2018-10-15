@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home.component';
 import { NotfoundComponent } from './components/notfound.component';
 import { ProductosListComponent } from './components/productos.list.component';
 import { ProductoAdd } from './components/productos.add.component';
+import { ProductoDetails } from './components/producto.detail.component';
+import { ProductoEdit } from './components/producto.edit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ProductoAdd } from './components/productos.add.component';
     HomeComponent,
     NotfoundComponent,
     ProductosListComponent,
-    ProductoAdd
+    ProductoAdd,
+    ProductoDetails,
+    ProductoEdit
   ],
   imports: [
     BrowserModule,

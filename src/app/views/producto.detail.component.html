@@ -1,0 +1,39 @@
+<h3>{{title}}</h3>
+<hr>
+<div *ngIf="!producto">
+        <p>Cargando del producto ...</p>
+</div>
+
+<div *ngIf="producto" class="product-detail">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/productos']">Productos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{producto.marca}}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+
+        <div class="col-md-4 border" *ngIf="producto.imagen">
+            <span class="border border-success">
+                <img src="{{pathImgApi}}{{producto.imagen}}">
+            </span>
+        </div>
+
+        <div [ngClass]=" producto.imagen ? 'col-md-8' : 'col-md-12' ">
+            <div><h5 class="text-success">{{producto.marca | uppercase }}</h5></div>
+            <div><strong>Precio:</strong> $ {{producto.precio}} COP</div>
+            <div><strong>Descripcion:</strong><br> {{producto.descripcion}} COP</div>
+        </div>
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+

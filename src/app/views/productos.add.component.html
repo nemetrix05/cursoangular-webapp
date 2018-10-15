@@ -4,7 +4,7 @@
     
     <div class="form-group col-md-6">
         <label>Nombre:</label>
-        <input type="text" class="form-control" name="marca" [(ngModel)]="producto.marca" #marca="ngModel" required pattern="[a-zA-Z]*">
+        <input type="text" class="form-control" name="marca" [(ngModel)]="producto.marca" #marca="ngModel" required pattern="[a-z A-Z ]+">
         <div class="alert alert-danger" *ngIf="marca.touched && !marca.valid" role="alert">Escribe la marca</div>
     </div>
 
@@ -18,7 +18,7 @@
 
     <div class="form-group col-md-6">
         <label>Catalogo:</label>
-        <input type="text" class="form-control" name="catalogo" [(ngModel)]="producto.catalogo" required #catalogo="ngModel" pattern="[a-zA-Z]*">
+        <input type="text" class="form-control" name="catalogo" [(ngModel)]="producto.catalogo" required #catalogo="ngModel" pattern="[a-z A-Z ]+">
         <div class="alert alert-danger" role="alert" *ngIf="catalogo.touched && !catalogo.valid">
             Escribe el catalogo
         </div>        
@@ -31,7 +31,7 @@
     
     <div class="form-group col-md-12">
         <label>Descripcion:</label>
-        <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" required #descripcion="ngModel" pattern="[a-zA-Z]*"></textarea>
+        <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" required #descripcion="ngModel" pattern="[a-z A-Z ]+*"></textarea>
         <div class="alert alert-danger" role="alert" *ngIf="descripcion.touched && !descripcion.valid">
                 Escribe la descripcion
         </div>             

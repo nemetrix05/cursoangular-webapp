@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home.component';
 import { NotfoundComponent } from './components/notfound.component';
 import { ProductosListComponent } from './components/productos.list.component';
 import { ProductoAdd } from './components/productos.add.component';
+import { ProductoDetails } from './components/producto.detail.component';
+import { ProductoEdit } from './components/producto.edit.component';
 
 // Rutas
 
@@ -15,6 +17,8 @@ const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'productos', component: ProductosListComponent},
     {path: 'createproducto', component: ProductoAdd},
+    {path: 'producto/:id', component: ProductoDetails},
+    {path: 'productoedit/:id', component: ProductoEdit},
     {path: '**', component: NotfoundComponent}
 ];
 

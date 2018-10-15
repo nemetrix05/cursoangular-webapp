@@ -32,7 +32,10 @@ export class ProductosListComponent{
     }
 
     ngOnInit(){
+        this.getProductos();
+    }
 
+    getProductos(){
         this._productService.getProducto().subscribe(
             result => {
 
@@ -49,7 +52,35 @@ export class ProductosListComponent{
                 console.log(<any>error);
             }
         );
+    }
 
+    // Metodos de confirmacion borrado
+
+    public seguro;
+
+    deleteConfirm(id){
+        this.seguro = id;
+    }
+
+    cancelConfirm(){
+        this.seguro = null;
+    }
+
+    // El componente recibe el id del evento clic y llama al servicio para que borre el producto
+    onDeleteProducto(id){
+        this._productService.deleteProducto(id).subscribe(
+            response => {
+                if(response.Code == 200){
+                    //Lista de nuevo los productos
+                    this.getProductos();
+                }else{
+                    console.log('No se pudo borrar el producto');
+                }
+            },
+            error => {
+                console.log(<any>error);
+            }
+        );
     }
 
 }

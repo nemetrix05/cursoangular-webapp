@@ -17,10 +17,37 @@ export class ProductoService{
         this.url = GLOBAL.urlapi; 
     }
 
+
+    // Servicio para borrar Producto
+    deleteProducto(id){
+        return this._http.get(this.url+'deletemoto/'+id)
+                    .map(res => res.json());
+    }
+
+
     // Servicio que lista los productos
     getProducto(){
         return this._http.get(this.url+'listmotos').map(response => response.json());
     }
+
+    // Servicio que captura el id del producto y hace una peticion AJAX http para obtener los detalles
+
+    getDetailProducto(id){
+        // Usamos el metodo del api para obtener un producto en especial
+        return this._http.get(this.url+'getmoto/'+id).map(response => response.json());
+    }
+
+    // Metodo para actualizar un producto
+    editProducto(id, producto: Producto){
+        let json = JSON.stringify(producto);
+        let params = "json="+json;
+        let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+        
+        // Hace la peticion Ajax, pero le envia el ID
+        return this._http.post(this.url+'updatemoto/'+id, params, {headers: headers})
+                .map(res => res.json());
+    }
+
 
     // Servicio que añade los productos
     addProducto(producto: Producto){

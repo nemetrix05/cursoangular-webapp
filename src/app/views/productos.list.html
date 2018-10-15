@@ -2,7 +2,7 @@
 <hr>
 
 <div *ngIf="!productos">
-    Cargando Productos...
+    No hay productos...
 </div>
 
 <div *ngIf="productos" class="row">
@@ -21,17 +21,23 @@
                 <h5>{{producto.marca}}</h5>
                 <div><strong>Precio:</strong> ${{producto.precio}}</div>
                 <div><strong>Descripcion:</strong> {{producto.descripcion}}</div>
-                <ul>
+                <ul *ngIf="seguro != producto.id">
                     <li>
-                        <a href="#" class="btn btn-sm btn-outline-success">Ver</a>
+                        <a [routerLink]="['/producto', producto.id]" class="btn btn-sm btn-outline-success">Ver</a>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-sm btn-outline-warning">Editar</a>
+                        <a [routerLink]="['/productoedit', producto.id]" class="btn btn-sm btn-outline-dark">Editar</a>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                        <a href="javascript:void(0)" (click)="deleteConfirm(producto.id)" class="btn btn-sm btn-outline-danger">Eliminar</a>
                     </li>                                        
-                </ul>            
+                </ul>        
+                <!--valid message-->
+                <div *ngIf="seguro == producto.id" [ngClass]="['confirmdel']">    
+                    <span>¿Deseas eliminarlo?</span>                
+                    <button type="button" (click)="onDeleteProducto(producto.id)" class="btn btn-sm btn-danger">Confirmar</button>
+                    <button type="button" (click)="cancelConfirm()" class="btn btn-sm btn-primary">Cancelar</button>
+                </div>    
             </div>
 
         </div>
