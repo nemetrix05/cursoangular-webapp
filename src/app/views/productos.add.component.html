@@ -31,7 +31,7 @@
     
     <div class="form-group col-md-12">
         <label>Descripcion:</label>
-        <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" required #descripcion="ngModel" pattern="[a-z A-Z ]+*"></textarea>
+        <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" required #descripcion="ngModel" pattern="[a-z A-Z ]+"></textarea>
         <div class="alert alert-danger" role="alert" *ngIf="descripcion.touched && !descripcion.valid">
                 Escribe la descripcion
         </div>             

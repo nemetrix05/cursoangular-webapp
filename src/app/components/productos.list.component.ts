@@ -22,6 +22,8 @@ export class ProductosListComponent{
 
     public pathImgApi:string;
 
+    public pathAssets:string;
+
     constructor(
         private _router: Router,
         private _routerAct: ActivatedRoute,
@@ -29,6 +31,7 @@ export class ProductosListComponent{
     ){
         this.title = 'Listado de productos';
         this.pathImgApi = GLOBAL.imgapi;
+        this.pathAssets = GLOBAL.urlassets;
     }
 
     ngOnInit(){

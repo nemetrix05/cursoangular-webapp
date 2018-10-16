@@ -1,0 +1,59 @@
+<div *ngIf="!productos">
+    <h3>No se encontraron resultados para: <strong class="text-danger">{{title}}</strong></h3>
+    <hr>  
+</div>
+
+<div *ngIf="productos" class="product-detail">
+
+    <h3>Resultados para: <strong class="text-success">{{title}}</strong></h3>
+    
+    <hr>          
+
+    <div class="row">
+
+        <div class="col-md-6" *ngFor="let producto of productos">  
+
+            <div class="row">
+
+                <div class="col-md-6" *ngIf="producto.imagen">
+                    <span class="border border-success" style="display:block;">
+                        <img src="{{pathImgApi}}{{producto.imagen}}">
+                    </span>
+                </div>
+
+                <div [ngClass]=" producto.imagen ? 'col-md-6' : 'col-md-12' ">
+                    <div><h5 class="text-success">{{producto.marca | uppercase }}</h5></div>
+                    <div><strong>Precio:</strong> $ {{producto.precio}} COP</div>
+                    <div><strong>Descripcion:</strong><br> {{producto.descripcion}} COP</div>
+                    <div class="item" style="margin:0;">
+                        <ul *ngIf="seguro != producto.id">
+                            <li>
+                                <a [routerLink]="['/productoedit', producto.id]" class="btn btn-sm btn-outline-dark">Editar</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" (click)="deleteConfirm(producto.id)" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                            </li>                                        
+                        </ul> 
+                    </div>       
+                    <!--valid message-->
+                    <div *ngIf="seguro == producto.id" [ngClass]="['confirmdel']">    
+                        <span>¿Deseas eliminarlo?</span>                
+                        <button type="button" (click)="onDeleteProducto(producto.id)" class="btn btn-sm btn-danger">Confirmar</button>
+                        <button type="button" (click)="cancelConfirm()" class="btn btn-sm btn-primary">Cancelar</button>
+                    </div>                        
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+

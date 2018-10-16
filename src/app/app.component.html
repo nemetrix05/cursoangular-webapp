@@ -21,13 +21,33 @@
 
     <div class="container">
 
-        <div class="col-md-10 offset-md-1">    
+        <div class="row align-items-center">
 
-            <ul>
-                <li><a [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a></li>
-                <li><a [routerLink]="['/productos']" [routerLinkActive]="['active']">Productos</a></li>
-                <li><a [routerLink]="['/createproducto']" [routerLinkActive]="['active']">Crear Producto</a></li>
-            </ul> 
+            <div class="col-md-6 offset-md-1">    
+
+                <ul>
+                    <li><a [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a></li>
+                    <li><a [routerLink]="['/productos']" [routerLinkActive]="['active']">Productos</a></li>
+                    <li><a [routerLink]="['/createproducto']" [routerLinkActive]="['active']">Crear Producto</a></li>
+                </ul> 
+
+            </div>
+
+            <div class="col-md-3 offset-md-1">
+
+                <div class="row no-gutters formsearch">
+
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Buscar ..." class="form-control form-control-sm" name="buscar" [(ngModel)]="busqueda">
+                    </div>
+
+                    <div class="col-md-6">
+                        <button (click)="getSearch()" class="btn btn-info btn-sm" >Buscar</button>
+                    </div>
+                    
+                </div>
+
+            </div>
 
         </div>
 

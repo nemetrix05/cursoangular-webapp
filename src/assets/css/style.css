@@ -115,7 +115,7 @@ a.active{
 
 .set-img{
     width: 100%;
-    min-height: 200px;
+    min-height: 60px;
     max-height: 100%;
 }
 
@@ -163,4 +163,8 @@ a.active{
 
 .confirmdel button{
     margin: 0 5px;
+}
+
+.formsearch button{
+    margin: 0 0 0 10px;
 }

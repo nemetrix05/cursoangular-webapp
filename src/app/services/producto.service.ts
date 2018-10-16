@@ -37,6 +37,11 @@ export class ProductoService{
         return this._http.get(this.url+'getmoto/'+id).map(response => response.json());
     }
 
+    // Servicio para obtener el producto
+    searchProducto(name){
+        return this._http.get(this.url+'searchp/'+name).map(response => response.json());
+    }
+
     // Metodo para actualizar un producto
     editProducto(id, producto: Producto){
         let json = JSON.stringify(producto);

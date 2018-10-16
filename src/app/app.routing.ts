@@ -9,6 +9,7 @@ import { ProductosListComponent } from './components/productos.list.component';
 import { ProductoAdd } from './components/productos.add.component';
 import { ProductoDetails } from './components/producto.detail.component';
 import { ProductoEdit } from './components/producto.edit.component';
+import { ProductoFound } from './components/producto.detail.found';
 
 // Rutas
 
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     {path: 'createproducto', component: ProductoAdd},
     {path: 'producto/:id', component: ProductoDetails},
     {path: 'productoedit/:id', component: ProductoEdit},
+    {path: 'productofound/:name', component: ProductoFound},
     {path: '**', component: NotfoundComponent}
 ];
 

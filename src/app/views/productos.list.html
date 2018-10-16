@@ -14,7 +14,8 @@
                 <img src="{{pathImgApi}}{{producto.imagen}}" class="card-img-top set-img"/>
             </div>
 
-            <div *ngIf="!producto.imagen" class="without-image set-img">
+            <div *ngIf="!producto.imagen">
+                <img src="{{pathAssets}}img/image-1539379685-image-1492887117-sf3-cover.jpg" class="card-img-top set-img"/>
             </div>            
 
             <div class="card-body">
