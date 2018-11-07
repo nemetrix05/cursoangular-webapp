@@ -27,7 +27,7 @@ export class ProductoService{
 
     // Servicio que lista los productos
     getProducto(){
-        return this._http.get(this.url+'listmotos/').map(response => response.json());
+        return this._http.get(this.url+'listmotos').map(response => response.json());
     }
 
     // Servicio que captura el id del producto y hace una peticion AJAX http para obtener los detalles

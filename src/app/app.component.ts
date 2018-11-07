@@ -13,16 +13,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   title = '@Mercado de pulgas';
-  
-  path:string;
 
   public busqueda:string;
 
   constructor(
     private _router: Router
   ){
-    
-    this.path = GLOBAL.path;
 
     // Forza el componente hacer reload
     this._router.routeReuseStrategy.shouldReuseRoute = function(){
